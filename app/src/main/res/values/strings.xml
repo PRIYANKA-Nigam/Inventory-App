@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Inventory Management App</string>
+    <string name="daily_expenses"><u>Daily Expenses</u></string>
+    <string name="enable_dark_mode"><u>Enable Dark Mode</u></string>
+    <string name="day_inventory"><u>Day Inventory</u></string>
+    <string name="control_screen_brightness"><u>Control Screen Brightness</u></string>
+    <string name="format_your_data"><u>Format Your Data</u></string>
+</resources>
