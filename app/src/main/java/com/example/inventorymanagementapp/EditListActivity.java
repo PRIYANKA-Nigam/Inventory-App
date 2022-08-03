@@ -15,8 +15,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 public class EditListActivity extends AppCompatActivity {
-    String a="";
+    String s="";
 EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ EditText editText;
         editText=findViewById(R.id.editTextTextMultiLine);
         setTitle("Edit ListView Item");
         Intent intent =getIntent();
-       a =intent.getStringExtra("item");
+     String  a =intent.getStringExtra("item");
        editText.setText(a);
     }
 
@@ -82,9 +84,9 @@ EditText editText;
 //    }
 
     public void sendBack(View view) {
-        a=editText.getText().toString();
+        s=editText.getText().toString();
         Intent intent1 =new Intent();
-        intent1.putExtra("result",a);
+        intent1.putExtra("result",s);
         setResult(RESULT_OK,intent1);
         finish();
     }

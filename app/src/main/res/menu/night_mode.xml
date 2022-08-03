@@ -5,4 +5,8 @@
         android:title="Enable Dark Mode"
         android:icon="@drawable/dark"
        app:showAsAction="always"/>
+    <item android:id="@+id/money"
+        android:title="Split Bill"
+        android:icon="@drawable/expense"
+        app:showAsAction="always"/>
 </menu>

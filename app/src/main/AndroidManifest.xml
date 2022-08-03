@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.inventorymanagementapp">
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
@@ -14,11 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Light">
-        <activity android:name=".EditListActivity"></activity>
+        <activity android:name=".AddMemberActivity"></activity>
+        <activity android:name=".SplitBillActivity" />
+        <activity android:name=".EditListActivity" />
         <activity android:name=".BrightnessActivity" />
-        <activity android:name=".ViewPagerActivity" android:supportsPictureInPicture="true"
-            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
-        <activity android:name=".PassCodeActivity" >
+        <activity
+            android:name=".ViewPagerActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:supportsPictureInPicture="true" />
+        <activity android:name=".PassCodeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +32,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".DarkModeActivity" />
-        <activity android:name=".AddExpenseActivity" android:supportsPictureInPicture="true"
-            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"  />
-        <activity android:name=".MainActivity" android:supportsPictureInPicture="true"
-            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
+        <activity
+            android:name=".AddExpenseActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:supportsPictureInPicture="true" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:supportsPictureInPicture="true" />
     </application>
 
 </manifest>

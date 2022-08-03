@@ -23,7 +23,9 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 private ArrayList<String> d1=new ArrayList<>();
@@ -32,7 +34,8 @@ private ArrayList<String> d1=new ArrayList<>();
     private ArrayList<String> d4=new ArrayList<>();
     TableLayout tableLayout;
     EditText e1,e2,e3,e4,e5,e6,e7;
-    Button b,b2; String expense="",product="";
+    Button b,b2; String expense="",product="",fixed="";
+    ArrayList<String> list =new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,13 +68,25 @@ private ArrayList<String> d1=new ArrayList<>();
             @Override
             public void onClick(View view) {
                 add(); expense=e4.getText().toString();
+                SharedPreferences sh =getSharedPreferences("chart", Context.MODE_PRIVATE);
+                sh.edit().putString("price", expense).putString("product", product).apply();
             }
         });
+
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences sh =getSharedPreferences("chart", Context.MODE_PRIVATE);
+                String s1=  sh.getString("price",null);
+                String s2=  sh.getString("product",null);
+                Calendar calendar =Calendar.getInstance();
+                String curDate= DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+          fixed="Price :"+s1+"\n"+"-------------------------------"+"\n"+s2+
+        "\n"+"------------------"+"Date: "+curDate;
+          list.add(fixed);
                 Intent intent=new Intent(getApplicationContext(),AddExpenseActivity.class);
-                intent.putExtra("see",expense);intent.putExtra("pro",product);
+                intent.putStringArrayListExtra("quote", list);
+                Toast.makeText(getApplicationContext(),"Data Passed to the List ...",Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });
@@ -160,6 +175,19 @@ private ArrayList<String> d1=new ArrayList<>();
         switch (item.getItemId()){
             case R.id.dark:
                    startActivity(new Intent(getApplicationContext(),DarkModeActivity.class));break;
+            case R.id.money:
+                SharedPreferences sh =getSharedPreferences("chart", Context.MODE_PRIVATE);
+                String s1=  sh.getString("price",null);
+                String s2=  sh.getString("product",null);
+                Calendar calendar =Calendar.getInstance();
+                String curDate= DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+                fixed="Price :"+s1+"\n"+"-------------------------------"+"\n"+s2+
+                        "\n"+"------------------"+"Date: "+curDate;
+                Intent intent =new Intent(getApplicationContext(),SplitBillActivity.class);
+                intent.putExtra("bill",fixed);
+                intent.putExtra("amount",s1);
+                startActivity(intent);
+                break;
 
         }
         return false;

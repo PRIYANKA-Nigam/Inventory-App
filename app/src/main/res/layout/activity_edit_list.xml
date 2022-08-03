@@ -18,7 +18,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:hint="Edit your data and Save to view in List ...."
         android:inputType="textMultiLine" />
 
