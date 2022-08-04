@@ -11,10 +11,16 @@
         android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="74dp"
-        android:gravity="center"
         android:layout_marginTop="15dp"
-        android:text="Split Money"
-        android:textSize="35dp" />
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:text="@string/split_money"
+       />
 
     <Spinner
         android:id="@+id/sp"
@@ -22,26 +28,13 @@
         android:layout_height="78dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
         android:layout_marginTop="147dp"
         android:layout_marginEnd="15dp" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="241dp"
-        android:text="SMS" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="193dp"
-        android:text="WHATSAPP" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
@@ -50,28 +43,138 @@
         android:onClick="AddMember"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="26dp"
         android:clickable="true"
         app:srcCompat="@drawable/add" />
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="299dp"
-        android:layout_height="177dp"
+        android:layout_width="164dp"
+        android:layout_height="94dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="251dp"
-        android:text="TextView" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="269dp"
+        android:layout_marginEnd="-1dp"
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
+        android:gravity="center|left"
+        android:text="Splitted Bill Value"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="322dp"
+        android:layout_height="44dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="103dp"
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
+        android:gravity="start|left|bottom"
+        android:text="Members"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="188dp"
+        android:layout_height="109dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="259dp"
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
+        android:gravity="center|left"
+        android:text="Money Per Head: "
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="213dp"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="217dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="SMS Amount" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="WHATSAPP Amount" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="183dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="DeleteItems"
+            android:textStyle="bold"
+            android:text="Delete All Members" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="78dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="170dp"
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
+        android:text="Toast: "
+        android:textStyle="bold"
+        android:textSize="15dp"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="313dp"
+        android:layout_height="132dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:onClick="DeleteItems"
-        android:layout_marginBottom="239dp"
-        android:text="Delete" />
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="84dp"
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
+        android:ems="10"
+        android:gravity="start"
+        android:textSize="10dp"
+        android:hint="Meggage to be send ..."
+        android:inputType="textMultiLine"
+        android:text="" />
 
 </RelativeLayout>

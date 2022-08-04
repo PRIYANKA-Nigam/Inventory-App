@@ -85,7 +85,7 @@ private ArrayList<String> d1=new ArrayList<>();
         "\n"+"------------------"+"Date: "+curDate;
           list.add(fixed);
                 Intent intent=new Intent(getApplicationContext(),AddExpenseActivity.class);
-                intent.putStringArrayListExtra("quote", list);
+                intent.putStringArrayListExtra("quote", list).putExtra("s1",s1);
                 Toast.makeText(getApplicationContext(),"Data Passed to the List ...",Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }

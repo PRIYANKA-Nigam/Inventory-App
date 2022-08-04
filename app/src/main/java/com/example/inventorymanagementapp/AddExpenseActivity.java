@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,7 +33,7 @@ import java.util.Set;
 
 public class AddExpenseActivity extends AppCompatActivity {
 ArrayList<String> list=new ArrayList<>(); ArrayList<String> userSelection =new ArrayList<>();
-ArrayAdapter adapter;  String r="";
+ArrayAdapter adapter;  String r="",p="";
     ListView listView; String c="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,12 @@ ArrayAdapter adapter;  String r="";
               }catch (Exception e){
                   e.printStackTrace();
               }
+                String q= list.get(pos);
+//              SharedPreferences preferences=getSharedPreferences("split",Context.MODE_PRIVATE);
+//              preferences.edit().putString("v",q).apply();
+                Intent intent =new Intent(getApplicationContext(),SplitBillActivity.class);
+                intent.putExtra("split",q);
+                startActivity(intent);
             }
         });
         LayoutInflater inflater =getLayoutInflater();  //for adding header to listView
@@ -212,6 +219,16 @@ ArrayAdapter adapter;  String r="";
                     adapter.notifyDataSetChanged();
                     actionMode.finish();
                     return true;
+                case R.id.money:
+//                   Intent intent =new Intent(getApplicationContext(),SplitBillActivity.class);
+//                   String w="";
+//                   for (int i=0;i<userSelection.size();i++)
+//                       w+=userSelection.get(i);
+//                    Log.d("checkin",w);
+//                   intent.putExtra("split",w);
+//                   intent.putExtra("s1",p);
+//                   startActivity(intent);
+//                    return true;
                 default:
                     return false;
             }

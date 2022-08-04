@@ -27,11 +27,16 @@
         android:layout_width="match_parent"
         android:layout_height="67dp"
         android:layout_marginTop="5dp"
+        android:shadowColor="@android:color/holo_orange_light"
+        android:shadowDx="-15"
+        android:shadowDy="-15"
+        android:shadowRadius="13"
         android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="40sp"
         android:text="@string/format_your_data"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+         />
 
     <TextView
         android:id="@+id/textView12"
