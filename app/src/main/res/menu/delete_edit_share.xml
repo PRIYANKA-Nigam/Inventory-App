@@ -13,8 +13,4 @@
         android:title="Delete your Favourites"
         android:icon="@drawable/delete"
         app:showAsAction="always"/>
-    <item android:id="@+id/money"
-        android:title="Split this Amount"
-        android:icon="@drawable/money"
-        app:showAsAction="always"/>
 </menu>

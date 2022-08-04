@@ -52,6 +52,10 @@ private ArrayList<String> d1=new ArrayList<>();
                         return true;
                     case R.id.home:
                         return true;
+                    case R.id.member:
+                        startActivity(new Intent(getApplicationContext(),AddNewMemberActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false; }
         });

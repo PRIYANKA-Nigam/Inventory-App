@@ -48,5 +48,7 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.google.android.material:material:1.2.0-alpha02'
     implementation 'androidx.test.espresso:espresso-core:3.2.0'
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'      //to embed text in drawable
+    implementation 'com.journeyapps:zxing-android-embedded:3.4.0'    //to generate QR
 
 }

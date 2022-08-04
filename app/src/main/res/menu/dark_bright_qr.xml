@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/dark"
+        android:title="Enable Dark Mode"
+        android:icon="@drawable/dark"
+        app:showAsAction="always"/>
+    <item android:id="@+id/bright"
+        android:title="Control Screen Brightness"
+        android:icon="@drawable/brightness"
+        app:showAsAction="always"/>
+    <item android:id="@+id/qr"
+        android:title="Share data as QR"
+        android:icon="@drawable/ic_baseline_qr_code_24"
+        app:showAsAction="always"/>
+</menu>

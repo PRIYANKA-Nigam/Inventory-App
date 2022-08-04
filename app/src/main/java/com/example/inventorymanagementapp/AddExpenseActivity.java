@@ -51,6 +51,10 @@ ArrayAdapter adapter;  String r="",p="";
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.member:
+                        startActivity(new Intent(getApplicationContext(),AddNewMemberActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false; }
         });
@@ -164,14 +168,17 @@ ArrayAdapter adapter;  String r="",p="";
         String select="";
         for (String s : arrayList)
             select+=s+"\n";
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "Billing Expenditure : " + select);
-        sendIntent.setType("text/plain");
-        Intent shareIntent = Intent.createChooser(sendIntent, null);
-        startActivity(shareIntent);
-        Toast.makeText(getApplicationContext(), "Sharing Bill ...", Toast.LENGTH_SHORT).show();
-        finish();
+        Intent intent=new Intent(getApplicationContext(),ShareActivity.class);
+        intent.putExtra("share",select);
+        startActivity(intent);
+//        Intent sendIntent = new Intent();
+//        sendIntent.setAction(Intent.ACTION_SEND);
+//        sendIntent.putExtra(Intent.EXTRA_TEXT, "Billing Expenditure : " + select);
+//        sendIntent.setType("text/plain");
+//        Intent shareIntent = Intent.createChooser(sendIntent, null);
+//        startActivity(shareIntent);
+//        Toast.makeText(getApplicationContext(), "Sharing Bill ...", Toast.LENGTH_SHORT).show();
+//        finish();
 
     }
     AbsListView.MultiChoiceModeListener modeListener =new AbsListView.MultiChoiceModeListener() {
@@ -219,16 +226,6 @@ ArrayAdapter adapter;  String r="",p="";
                     adapter.notifyDataSetChanged();
                     actionMode.finish();
                     return true;
-                case R.id.money:
-//                   Intent intent =new Intent(getApplicationContext(),SplitBillActivity.class);
-//                   String w="";
-//                   for (int i=0;i<userSelection.size();i++)
-//                       w+=userSelection.get(i);
-//                    Log.d("checkin",w);
-//                   intent.putExtra("split",w);
-//                   intent.putExtra("s1",p);
-//                   startActivity(intent);
-//                    return true;
                 default:
                     return false;
             }

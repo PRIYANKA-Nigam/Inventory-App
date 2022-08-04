@@ -7,4 +7,8 @@
     <string name="format_your_data"><u>Format Your Data</u></string>
     <string name="add_new_member"><u>ADD NEW MEMBER</u></string>
     <string name="split_money"><u>Split Money</u></string>
+    <string name="add_members"><u>ADD Members</u></string>
+    <string name="share_bill_invoice"><u>Share Bill Invoice</u></string>
+    <string name="sharing_bill"><u>Sharing Bill</u></string>
+    <string name="share_bill_as_qr"><u>Share Bill as QR</u></string>
 </resources>

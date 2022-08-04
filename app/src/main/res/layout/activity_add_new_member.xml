@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
-    tools:context=".AddMemberActivity">
-
+    android:padding="20sp"
+    tools:context=".AddNewMemberActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,11 +44,11 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="15dp"
             android:text="ADD"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -63,10 +62,19 @@
         android:shadowDx="-15"
         android:shadowDy="-15"
         android:shadowRadius="13"
-        android:textColor="@android:color/holo_red_dark"
         android:gravity="center"
+        android:textColor="@android:color/holo_red_dark"
         android:textStyle="bold"
         android:textSize="40sp"
-        android:text="@string/add_members"
+        android:text="@string/add_new_member"
         />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@color/colorPrimary"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
