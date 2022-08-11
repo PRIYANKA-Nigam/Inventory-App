@@ -2,6 +2,7 @@ package com.example.inventorymanagementapp;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PictureInPictureParams;
@@ -9,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ActionMode;
@@ -24,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -32,6 +35,7 @@ import java.util.List;
 import java.util.Set;
 
 public class AddExpenseActivity extends AppCompatActivity {
+    LottieAnimationView lottieAnimationView;
 ArrayList<String> list=new ArrayList<>(); ArrayList<String> userSelection =new ArrayList<>();
 ArrayAdapter adapter;  String r="",p="";
     ListView listView; String c="";
@@ -39,6 +43,17 @@ ArrayAdapter adapter;  String r="",p="";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
+        lottieAnimationView=findViewById(R.id.ll2);
+        lottieAnimationView.loop(true);
+        lottieAnimationView.playAnimation();
+        lottieAnimationView.setTooltipText("Make Payment");
+        lottieAnimationView.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),PaymentActivity.class));
+            }
+        });
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.dashboard);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

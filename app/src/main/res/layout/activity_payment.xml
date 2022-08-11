@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="44dp"
+        android:layout_marginTop="221dp"
+        android:background="#555"
+        android:text="Pay with RazorPay"
+        android:textColor="@android:color/white"
+        android:textSize="25dp"
+        android:textStyle="bold">
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="195dp"
+        android:layout_height="46dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="359dp"
+        android:layout_marginEnd="87dp"
+        android:text="Payment Status"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"/>
+</RelativeLayout>

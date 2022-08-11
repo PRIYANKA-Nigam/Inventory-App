@@ -24,15 +24,39 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="39dp"
+        android:layout_toRightOf="@+id/textView3"
+        android:clickable="true"
         android:onClick="ScreenBrightness"
         android:shadowColor="@android:color/holo_orange_light"
         android:shadowDx="-15"
         android:shadowDy="-15"
         android:shadowRadius="13"
-        android:layout_toRightOf="@+id/textView3"
-        android:clickable="true"
         app:srcCompat="@drawable/brightness" />
+
+    <LinearLayout
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/floatingActionButton"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="183dp"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/round_shape"
+        android:elevation="8dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/floatingActionButton"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            app:lottie_rawRes="@raw/rupee" />
+    </LinearLayout>
+
     <ListView
         android:id="@+id/ll"
         android:layout_width="359dp"
@@ -57,4 +81,6 @@
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
         android:layout_alignParentBottom="true" />
+
+
 </RelativeLayout>

@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.application'
 }
-
+repositories {
+    mavenCentral()
+}
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.2"
@@ -50,5 +52,6 @@ dependencies {
     implementation 'androidx.test.espresso:espresso-core:3.2.0'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'      //to embed text in drawable
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'    //to generate QR
-
+    implementation 'com.airbnb.android:lottie:3.4.4'   //for giving animation using lottiefile json image
+    implementation 'com.razorpay:checkout:1.6.24'
 }

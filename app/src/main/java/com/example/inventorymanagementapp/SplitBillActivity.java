@@ -2,6 +2,7 @@ package com.example.inventorymanagementapp;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -27,11 +29,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class SplitBillActivity extends AppCompatActivity  {
+    LottieAnimationView lottieAnimationView;
  String a=""; TextView textView,textView2,textView3;
  EditText editText;
     String s1="",s2=""; String mob=""; static int len=0,o=0;
@@ -45,6 +50,17 @@ ArrayAdapter<String> arrayAdapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_split_bill);
+        lottieAnimationView=findViewById(R.id.ll2);
+        lottieAnimationView.loop(true);
+        lottieAnimationView.playAnimation();
+        lottieAnimationView.setTooltipText("Make Payment");
+        lottieAnimationView.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),PaymentActivity.class));
+            }
+        });
         spinner=findViewById(R.id.sp);
         AddToSpinner(arrayList);
         textView=findViewById(R.id.textView18);
