@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="WHATSAPP Amount" />
+                android:text="SEND ONLINE" />
         </LinearLayout>
 
         <Button
@@ -174,7 +174,7 @@
         android:ems="10"
         android:gravity="start"
         android:textSize="10dp"
-        android:hint="Meggage to be send ..."
+        android:hint="Inventory list of saved items"
         android:inputType="textMultiLine"
         android:text="" />
     <LinearLayout

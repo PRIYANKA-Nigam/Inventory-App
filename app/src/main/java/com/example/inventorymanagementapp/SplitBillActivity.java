@@ -40,10 +40,9 @@ public class SplitBillActivity extends AppCompatActivity  {
  String a=""; TextView textView,textView2,textView3;
  EditText editText;
     String s1="",s2=""; String mob=""; static int len=0,o=0;
-Button b1,b2; double d=0; String mssg=""; int check=0;
-Spinner spinner; String message="",price="";
+Button b1,b2; double d=0; String mssg="";
+Spinner spinner; String message="*" , message1="*",price="";
 ArrayList<String> arrayList =new ArrayList<>();
-ArrayList<String> arrayList2 =new ArrayList<>();
 ArrayAdapter<String> arrayAdapter;
 
     @Override
@@ -70,12 +69,13 @@ ArrayAdapter<String> arrayAdapter;
 
         a = getIntent().getStringExtra("bill");
         String b = getIntent().getStringExtra("amount");
-        check=0; message=a;
+        message=a;
         editText.setText(a);
          price=b;
        try {
-            String flag = getIntent().getStringExtra("split");  //price,product,date
-           message=flag; check=1; editText.setText(flag);
+            String flag = getIntent().getStringExtra("split");  //price,product,date for the saved items only
+           message1=flag;
+           editText.setText(flag);
             String[] wow = flag.split(System.lineSeparator());
             String now = wow[0];
             String[] how = now.split(": *");
@@ -85,28 +85,21 @@ ArrayAdapter<String> arrayAdapter;
            e.printStackTrace();
        }
         textView3.setText("Members per head for "+price+" Rupees: ");
-        mssg="Errands List for "+message;
+        mssg="Total Expense --> "+"\n\n "+message+" "+message1;
        try {
             o = Integer.parseInt(price);
         }catch (NumberFormatException e){
            e.printStackTrace();
        }
 
-        String num="8932946515, 9129520224, 9599339822";
-        SmsManager smsManager=SmsManager.getDefault();
-        String numbers[]=num.split(", *");
 b1=findViewById(R.id.button4);
 b1.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-//        for (String n :numbers){
-//            smsManager.sendTextMessage(n,null,mssg,null,null);
-//            Toast.makeText(getApplicationContext(),"Message Send Successfully ...",Toast.LENGTH_SHORT).show();
-//
-//        }
         Intent i=new Intent(Intent.ACTION_VIEW);
         i.putExtra("sending","8932946515;9129520224;9599339822");
         i.putExtra("sending","My Bills");
+        i.putExtra(Intent.EXTRA_TEXT,message+message1);
         i.setType("vnd.android-dir/mms-sms");
         startActivity(i);
     }
@@ -116,16 +109,16 @@ b2.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         PackageManager packageManager = getPackageManager();
-        try {
+//        try {
             Intent intent =new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
-            PackageInfo info =packageManager.getPackageInfo("com.whatsapp",PackageManager.GET_META_DATA);
-            intent.setPackage("com.whatsapp");
+//            PackageInfo info =packageManager.getPackageInfo("com.whatsapp",PackageManager.GET_META_DATA);
+//            intent.setPackage("com.whatsapp");  //when send only to whatsapp .............................................................
             intent.putExtra(Intent.EXTRA_TEXT,mssg);
             startActivity(Intent.createChooser(intent,"Share with ..."));
-        }catch (PackageManager.NameNotFoundException e){
-            Toast.makeText(getApplicationContext(),"Sending Failed  !!!!!!!!\n whatsapp not installed",Toast.LENGTH_SHORT).show();
-        }
+//        }catch (PackageManager.NameNotFoundException e){
+//            Toast.makeText(getApplicationContext(),"Sending Failed  !!!!!!!!\n whatsapp not installed",Toast.LENGTH_SHORT).show();
+//        }
     }
 });
 try{
@@ -135,6 +128,7 @@ try{
         }
       try  {
             d = o / len;
+          message=String.valueOf(d);
           textView.setText(String.valueOf(d)); textView.setTextColor(Color.BLACK);
         }catch (NullPointerException|ArithmeticException e){
           e.printStackTrace();
@@ -198,6 +192,7 @@ try{
             try  {
                 d = o / len;
                 textView.setText(String.valueOf(d));textView.setTextColor(Color.BLACK);
+                message=String.valueOf(d);
             }catch (NullPointerException|ArithmeticException e){
                 e.printStackTrace();
             }
