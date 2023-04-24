@@ -119,13 +119,17 @@ private ArrayList<String> d1=new ArrayList<>();
         });
     }
     public void add() {
-        int t;
+        int t,q;
         try {
         String p = e1.getText().toString().trim();
         int pr = Integer.parseInt(e2.getText().toString().trim());
-        int q = Integer.parseInt(e3.getText().toString().trim());
+        if(!(e3.getText().toString().trim()).equals(""))
+            q = Integer.parseInt(e3.getText().toString().trim());
+        else
+            q=1;
 
-            if (!p.equals("") && !(e2.getText().toString().trim()).equals("") && !(e3.getText().toString().trim()).equals("")) {
+
+            if (!p.equals("") && !(e2.getText().toString().trim()).equals("") ) {
                 t = q * pr;
                 d1.add(p); product+="- "+p+"\n";
                 d2.add(String.valueOf(pr));
